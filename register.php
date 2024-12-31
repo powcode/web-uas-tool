@@ -7,7 +7,6 @@ if (isset($_SESSION['id_user'])) {
     exit;
 }
 
-// register.php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $nama = $_POST['nama'];
@@ -15,12 +14,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $confirm_password = $_POST['confirm_password'];
 
     if ($password !== $confirm_password) {
-        $error = "Password tidak sesuai";
+        $error = "Password tidak sesuai, coba lagi.";
     } else {
         $hashed_password = password_hash($password, PASSWORD_BCRYPT);
         $role = 'user';
 
-        // Check if username already exists
+
         $checkQuery = "SELECT * FROM users WHERE username = ?";
         $checkStmt = $conn->prepare($checkQuery);
         $checkStmt->bind_param('s', $username);
@@ -28,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $checkResult = $checkStmt->get_result();
 
         if ($checkResult->num_rows > 0) {
-            $error = "Username sudah digunakan";
+            $error = "Username sudah digunakan, coba lagi.";
         } else {
             $query = "INSERT INTO users (username, nama, password, role) VALUES (?, ?, ?, ?)";
             $stmt = $conn->prepare($query);

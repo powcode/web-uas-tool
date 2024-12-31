@@ -1,22 +1,21 @@
 <?php
-// Start the session
-session_start();
-include('config.php'); // Database connection file
 
-// Check if the user is logged in, if not redirect to login page
+session_start();
+include('config.php'); 
+
+
 if (!isset($_SESSION['id_user'])) {
     header("location: login.php");
     exit;
 }
 
-// Logout functionality
+
 if (isset($_GET['logout'])) {
     session_destroy();
     header("location: login.php");
     exit;
 }
 
-// Fetch games from database
 $query = "SELECT * FROM game";
 $result = $conn->query($query);
 $games = [];
@@ -60,7 +59,7 @@ if ($result->num_rows > 0) {
     </section>
 
     <section class="game-section" id="games">
-        <!-- Games will be dynamically loaded here by script.js -->
+      <!-- diisi dengan javascript -->
     </section>
 
     <div id="pagination" style="text-align: center; margin: 20px 0;"></div>

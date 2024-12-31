@@ -1,9 +1,9 @@
 <?php
-// login.php
-session_start();
-include('config.php'); // Database connection file
 
-// Redirect to index if the user is already logged in
+session_start();
+include('config.php'); 
+
+
 if (isset($_SESSION['id_user'])) {
     header('Location: index.php');
     exit;

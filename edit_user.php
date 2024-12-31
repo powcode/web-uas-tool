@@ -1,7 +1,7 @@
 <?php
-// edit_user.php
+
 session_start();
-include('config.php'); // Database connection file
+include('config.php');
 
 if (!isset($_SESSION['admin'])) {
     header('Location: login.php');
@@ -10,7 +10,7 @@ if (!isset($_SESSION['admin'])) {
 
 $userId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
-// Fetch user details
+
 $query = "SELECT * FROM users WHERE id_user = ?";
 $stmt = $conn->prepare($query);
 $stmt->bind_param('i', $userId);

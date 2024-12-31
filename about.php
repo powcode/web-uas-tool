@@ -52,7 +52,7 @@
     <img src="foto.jpeg" alt="Foto diri">
         <div class="student-details">
             <h3 >I Made Dwipa Raditya Dinatha</h3>
-            <h3>240551028</h3>
+            <h3>2405551028</h3>
         </div>
 
     <p>DGame merupakan sebuah platform penyedia informasi game. Web ini dibuat berdasarkan hobi atau kesenangan saya dalam mencari game-game bajakan yang tersedia di internet. Untuk sementara, web ini hanya menampilkan detail spesifikasi dari beberapa game dan belum include link downloadnya. Untuk kedepannya akan ditambahkan fitur download agar pengguna lebih mudah mengakses link asli tanpa iklan berlebihan.</p>
